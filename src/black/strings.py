@@ -170,12 +170,12 @@ def normalize_string_quotes(s: str) -> str:
     strings nested in f-strings.
     """
     value = s.lstrip(STRING_PREFIX_CHARS)
-    if value[:3] == "'''":
+    if value[:3] == '"""':
         return s
 
-    elif value[:3] == '"""':
-        orig_quote = '"""'
-        new_quote = "'''"
+    elif value[:3] == "'''":
+        orig_quote = "'''"
+        new_quote = '"""'
     elif value[0] == "'":
         orig_quote = "'"
         new_quote = '"'
